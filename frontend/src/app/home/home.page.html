@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    CLASS-LIST
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">Class-List</ion-label>
+      <ion-input [(ngModel)]="class_list" type="text"></ion-input>
+
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="button" (click)="addclasses()" color="primary" shape="full" expand="block">Add Class</ion-button>
+      </ion-col>
+    </ion-row>
+
+    
+  </ion-list>
+
+
+  <ion-list>
+
+    <ion-list-header style="text-align: center;" >
+     <h3>CLASS-LIST</h3> 
+    </ion-list-header>
+
+    <ion-item lines="inset"  >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h6 style="text-align: center;">Class_list</h6>
+          </ion-col>
+
+          <ion-col>
+            <h6 style="text-align: center;">Classid</h6>
+          </ion-col>
+         
+          <ion-col>
+            <h6 style="text-align: center;">Update</h6>
+          </ion-col>
+         
+          <ion-col>
+            <h6 style="text-align: center;">Delete</h6>
+          </ion-col>
+          <ion-col>
+            <h6 style="text-align: center;">Add</h6>
+          </ion-col>
+          <ion-col>
+            <h6 style="text-align: center;">Show</h6>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let classes of  classes" >
+          <ion-col text-center>
+           <ion-label style="text-align: center;">{{classes.class_list}}</ion-label> 
+          </ion-col>
+
+          <ion-col text-center>
+            <ion-label style="text-align: center;">{{classes.cid}}</ion-label> 
+           </ion-col>
+          
+          <ion-col >
+            <ion-icon name="create" style="zoom: 2.0; margin: auto; display: block; "  [routerLink]="['/updateclasses/', classes.cid]"></ion-icon>
+          </ion-col>
+         
+          <ion-col>
+            <ion-icon name="trash" (click)="deleteclass(classes.cid)" style="zoom: 2.0; margin: auto; display: block;" ></ion-icon>
+          </ion-col>  
+          
+          <ion-col>
+            <ion-icon name="add-circle" style="zoom: 2.0; margin: auto; display: block; " [routerLink]="['/addstudent/']"></ion-icon>
+          </ion-col>
+          
+
+          <ion-col >
+            <ion-button color="light"  style=" margin: auto; display: block; " [routerLink]="['/studentlist/', classes.cid]">Show</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+   <!-- <ion-label>
+      <h5>{{student.StudentName	}} - ({{student.MarksObtained}}, {{student.Result}})</h5>
+    </ion-label> 
+
+    <div class="item-note">
+
+      <ion-icon name="create" style="zoom: 2.0;" [routerLink]="['/update-student/',student.id]"></ion-icon>
+      <ion-icon name="trash" (click)="deleteStudent(student.id)" style="zoom: 2.0;" ></ion-icon>
+
+    </div>-->
+  </ion-item>
+  </ion-list>
+
+</ion-content>
+
+    
+
+    
+ 

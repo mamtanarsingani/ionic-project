@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>updateclasses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list line="full">
+  
+      <ion-item>
+        <ion-label position="floating">Class-List</ion-label>
+        <ion-input [(ngModel)]="class_list" type="text"></ion-input>
+        </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="button" (click)="updateclass()" color="primary" shape="full" expand="block">Update classes</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-content>
+  
+  
+  
+  
